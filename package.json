@@ -1,0 +1,11 @@
+{
+  "name": "jayanth-portfolio",
+  "version": "1.0.0",
+  "description": "Jayanth Portfolio",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

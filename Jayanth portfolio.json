@@ -1,0 +1,215 @@
+{
+  "meta": {
+    "title": "Jayanth S Kumar — Creative Portfolio",
+    "author": "Jayanth S Kumar",
+    "year": 2026,
+    "location": "Bangalore, India",
+    "instagram": "https://www.instagram.com/_jayanth_s_kumar_?igsh=aW52cmtkMzVlM2xm",
+    "instagram_handle": "@_jayanth_s_kumar_"
+  },
+  "navigation": {
+    "wordmark": "JSK.",
+    "links": [
+      {
+        "label": "Work",
+        "href": "#work"
+      },
+      {
+        "label": "Skills",
+        "href": "#skills"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Creative & Marketing Professional",
+    "title": "Jayanth S Kumar",
+    "bio": "Brand strategist, visual designer, and storyteller. I craft identities, experiences, and campaigns that leave a mark — from container cafés to global brand analysis.",
+    "stats": [
+      {
+        "value": "6+",
+        "label": "Projects"
+      },
+      {
+        "value": "3+",
+        "label": "Disciplines"
+      },
+      {
+        "value": "∞",
+        "label": "Creativity"
+      }
+    ],
+    "cta": [
+      {
+        "label": "View Work",
+        "href": "#work",
+        "style": "primary"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/_jayanth_s_kumar_?igsh=aW52cmtkMzVlM2xm",
+        "style": "outline",
+        "target": "_blank"
+      }
+    ]
+  },
+  "work": {
+    "section_label": "Selected Work",
+    "section_title": "Projects & Campaigns",
+    "section_sub": "A curated collection of brand identity, strategy, motion, and spatial design work.",
+    "projects": [
+      {
+        "id": "cargo-ville-primary-logo",
+        "tag": "Brand Identity",
+        "title": "Cargo Ville — Primary Logo System",
+        "description": "Bold illustrated logotype for a container-café concept. Navy & amber palette, hand-crafted container illustration with warm string-light interior detail — built for signage and brand collateral.",
+        "year": "2026",
+        "type": "image",
+        "layout": "wide",
+        "asset_file": "ChatGPT_Image_Jan_16__2026__10_01_47_PM.png",
+        "aspect_ratio": "4/3"
+      },
+      {
+        "id": "cargo-ville-badge",
+        "tag": "Brand Identity",
+        "title": "Cargo Ville — Badge Variant",
+        "description": "Circular badge lockup with silhouette interior. 'Space to Experience' — designed for merch, stamps, and social avatars.",
+        "year": "2026",
+        "type": "image",
+        "layout": "narrow",
+        "asset_file": "Modern_Cargo_Ville_logo_design.png",
+        "aspect_ratio": "4/3"
+      },
+      {
+        "id": "cargo-ville-interior",
+        "tag": "Spatial & Concept Design",
+        "title": "Cargo Ville — Interior Moodboard",
+        "description": "Modern café interior featuring green velvet seating, black marble counter, and illuminated pod booths — translating the brand into physical space.",
+        "year": "2026",
+        "type": "image",
+        "layout": "half",
+        "asset_file": "generated-image.png",
+        "aspect_ratio": "16/9"
+      },
+      {
+        "id": "red-bull-marketing-mix",
+        "tag": "Marketing Strategy",
+        "title": "Red Bull — 4P Strategic Deep Dive",
+        "description": "Comprehensive analysis of Red Bull's Product, Pricing, Distribution & Promotion. Key insight: Red Bull is a media company that happens to sell drinks — and why that's genius.",
+        "year": "2025–26",
+        "type": "document",
+        "layout": "half",
+        "asset_file": "Marketing-Mix-Analysis-Red-Bull_pptx.pdf",
+        "document_meta": {
+          "slides": 10,
+          "team": "Team Wiiings",
+          "section": "Sec K"
+        },
+        "tags": [
+          "4Ps",
+          "Brand Strategy",
+          "Research",
+          "Presentation"
+        ]
+      },
+      {
+        "id": "copy-machine-ai-effect",
+        "tag": "Motion · AI Creative",
+        "title": "Copy Machine — AI Video Effect",
+        "description": "Experimental AI-driven video effect exploring duplication, identity, and the blur between original and copy. A study in visual abstraction through generative tools.",
+        "year": "2026",
+        "type": "video",
+        "layout": "half",
+        "asset_file": "Copy_Machine__AI_Video_Effect_.mp4"
+      },
+      {
+        "id": "short-form-may-2026",
+        "tag": "Motion · Videography",
+        "title": "Short-Form Creative — May 2026",
+        "description": "Platform-native video content combining visual storytelling with rhythmic editing — crafted for social-first audiences.",
+        "year": "2026",
+        "type": "video",
+        "layout": "half",
+        "asset_file": "WhatsApp_Video_2026-05-15_at_2_27_36_PM.mp4"
+      }
+    ]
+  },
+  "skills": {
+    "section_label": "Capabilities",
+    "section_title": "What I Do",
+    "section_sub": "Strategy meets aesthetics — across brand, marketing, motion, and experience.",
+    "items": [
+      {
+        "id": "01",
+        "name": "Brand Identity",
+        "description": "Logo systems, visual language, colour theory, and brand guidelines that endure beyond trends."
+      },
+      {
+        "id": "02",
+        "name": "Marketing Strategy",
+        "description": "4P analysis, campaign planning, audience segmentation, and positioning grounded in research."
+      },
+      {
+        "id": "03",
+        "name": "Visual Design",
+        "description": "Presentations, creative concepts, and visual communication that clarifies and persuades."
+      },
+      {
+        "id": "04",
+        "name": "Motion & Video",
+        "description": "AI-assisted effects, short-form content creation, and storytelling through moving image."
+      },
+      {
+        "id": "05",
+        "name": "Spatial Concepts",
+        "description": "Interior moodboarding, experiential thinking, and translating brand into physical environments."
+      },
+      {
+        "id": "06",
+        "name": "Social & Content",
+        "description": "Platform-native storytelling, Instagram-first creative, and social strategy that builds audiences."
+      }
+    ]
+  },
+  "about": {
+    "section_label": "About",
+    "section_title": "The Person Behind the Work",
+    "monogram": "JSK",
+    "tagline": "Design with purpose.",
+    "bio": [
+      "I'm Jayanth S Kumar — a creative professional based in Bangalore, working across brand identity, marketing strategy, motion, and experience design.",
+      "My work spans from developing the complete visual identity for Cargo Ville — a container-café concept — to crafting strategic marketing analyses for global brands like Red Bull. I believe the best creative work sits at the intersection of rigorous thinking and strong aesthetics.",
+      "When I'm not designing, I'm documenting moments through video and building content for social — always curious, always experimenting at the edge of new tools and ideas."
+    ],
+    "instagram": {
+      "handle": "@_jayanth_s_kumar_",
+      "url": "https://www.instagram.com/_jayanth_s_kumar_?igsh=aW52cmtkMzVlM2xm"
+    }
+  },
+  "contact": {
+    "section_label": "Get In Touch",
+    "section_title": "Let's Make Something.",
+    "cta_text": "Have a brand, campaign, or concept you'd like to bring to life? Let's talk.",
+    "cta": {
+      "label": "DM on Instagram",
+      "href": "https://www.instagram.com/_jayanth_s_kumar_?igsh=aW52cmtkMzVlM2xm",
+      "target": "_blank"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Jayanth S Kumar. All rights reserved.",
+    "location": "Bangalore, India",
+    "disciplines": [
+      "Brand",
+      "Strategy",
+      "Motion"
+    ]
+  }
+}
