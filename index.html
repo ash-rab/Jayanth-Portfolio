@@ -11,7 +11,7 @@
   --paper: #f5f2ec;
   --accent: #ff4d00;
   --muted: #8a8680;
-  --card-bg: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.15);
   --border: #e2ddd6;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -19,38 +19,60 @@ html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:transparent;color:var(--ink);overflow-x:hidden;}
 
 /* Glossy Background Effects */
+@keyframes iridescent {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes liquidWave {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes liquidBlob {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+  67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+}
+
 .bg-glow {
   position: fixed;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(60px);
   z-index: -2;
-  opacity: 0.55;
+  opacity: 0.8;
   pointer-events: none;
 }
 .bg-glow-1 {
-  width: 45vw;
-  height: 45vw;
-  background: var(--accent);
+  animation: float1 18s ease-in-out infinite alternate, liquidBlob 12s ease-in-out infinite;
+  width: 80vw;
+  height: 80vw;
+  background: linear-gradient(135deg, #130026, #48004f);
   top: -10vw;
   right: -10vw;
-  animation: float1 18s ease-in-out infinite alternate;
+  animation: float1 18s ease-in-out infinite alternate, liquidBlob 12s ease-in-out infinite;
 }
 .bg-glow-2 {
-  width: 55vw;
-  height: 55vw;
-  background: #ffb347;
+  animation: float2 22s ease-in-out infinite alternate, liquidBlob 15s ease-in-out infinite alternate-reverse;
+  width: 90vw;
+  height: 90vw;
+  background: linear-gradient(135deg, #00122e, #003759);
   bottom: -20vw;
   left: -15vw;
-  animation: float2 22s ease-in-out infinite alternate;
+  animation: float2 22s ease-in-out infinite alternate, liquidBlob 15s ease-in-out infinite alternate-reverse;
 }
 .bg-glass-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(245, 242, 236, 0.65);
+  background: 
+    linear-gradient(125deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%),
+    linear-gradient(45deg, rgba(0,255,255,0.15), rgba(255,0,128,0.15), rgba(255,255,0,0.15), rgba(0,255,255,0.15));
+  background-size: 100% 100%, 300% 300%;
+  animation: iridescent 12s ease infinite;
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
   z-index: -1;
   pointer-events: none;
+  mix-blend-mode: overlay;
 }
 @keyframes float1 {
   0% { transform: translate(0, 0) scale(1); }
@@ -99,8 +121,38 @@ section{padding:7rem 3rem;}
 .section-sub{color:var(--muted);font-size:0.95rem;line-height:1.6;max-width:55ch;margin-bottom:4rem;}
 
 .work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.5rem;}
-.project-card{background:var(--card-bg);border:1px solid var(--border);overflow:hidden;position:relative;transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;}
-.project-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.1);}
+.project-card{background:var(--card-bg);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border:1px solid rgba(255,255,255,0.8);border-right:1px solid rgba(255,255,255,0.4);border-bottom:1px solid rgba(255,255,255,0.4);box-shadow: 0 15px 35px 0 rgba(31, 38, 135, 0.15);overflow:hidden;position:relative;transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;}
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  width: 250%;
+  height: 250%;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(255, 0, 128, 0.15), rgba(255, 255, 0, 0.15));
+  border-radius: 40% 45% 40% 45%;
+  transform: translate(-50%, -50%);
+  transition: top 0.9s cubic-bezier(0.4, 0, 0.2, 1), background 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.project-card:hover::before {
+  top: 0%;
+  animation: liquidWave 8s linear infinite;
+}
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 2;
+}
+.project-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 25px 60px rgba(0, 255, 255, 0.15), 0 15px 35px rgba(255, 0, 128, 0.15);
+}
 .project-card.wide{grid-column:span 7;}
 .project-card.narrow{grid-column:span 5;}
 .project-card.half{grid-column:span 6;}
@@ -118,7 +170,7 @@ section{padding:7rem 3rem;}
 .card-arrow{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all 0.25s;font-size:0.9rem;}
 .project-card:hover .card-arrow{background:var(--accent);border-color:var(--accent);color:#fff;}
 
-.pdf-panel{background:var(--ink);padding:2.8rem 2rem;display:flex;align-items:flex-start;gap:1.5rem;position:relative;overflow:hidden;min-height:180px;}
+.pdf-panel{background:rgba(17,17,17,0.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.2);padding:2.8rem 2rem;display:flex;align-items:flex-start;gap:1.5rem;position:relative;overflow:hidden;min-height:180px;}
 .pdf-panel::before{content:'PDF';font-family:'Syne',sans-serif;font-size:8rem;font-weight:800;color:rgba(255,77,0,0.06);position:absolute;right:-1rem;top:50%;transform:translateY(-50%);line-height:1;}
 .pdf-icon{width:52px;height:52px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;border-radius:4px;}
 .pdf-title{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;color:#fff;line-height:1.2;margin-bottom:0.4rem;}
@@ -130,7 +182,7 @@ section{padding:7rem 3rem;}
 .video-thumb video{width:100%;height:100%;object-fit:cover;opacity:0.75;}
 .play-btn{position:absolute;width:52px;height:52px;border-radius:50%;background:rgba(255,77,0,0.9);display:flex;align-items:center;justify-content:center;color:#fff;pointer-events:none;box-shadow:0 0 40px rgba(255,77,0,0.4);font-size:1.1rem;}
 
-#skills{background:var(--ink);color:#fff;}
+#skills{background:rgba(17,17,17,0.65);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);color:#fff;border-top:1px solid rgba(255,255,255,0.1);}
 #skills .section-title{color:#fff;}
 #skills .section-sub{color:rgba(255,255,255,0.4);}
 #skills .section-label::before{background:var(--accent);}
@@ -151,7 +203,7 @@ section{padding:7rem 3rem;}
 .ig-link{display:inline-flex;align-items:center;gap:0.7rem;padding:0.9rem 1.6rem;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:#fff;text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;margin-top:0.5rem;transition:opacity 0.2s;border-radius:2px;}
 .ig-link:hover{opacity:0.85;}
 
-#contact{background:var(--ink);color:#fff;text-align:center;padding:8rem 3rem;}
+#contact{background:rgba(17,17,17,0.7);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);color:#fff;text-align:center;padding:8rem 3rem;border-top:1px solid rgba(255,255,255,0.1);}
 #contact .section-label{justify-content:center;}
 #contact .section-label::before{display:none;}
 #contact .section-title{color:#fff;margin-bottom:1rem;}
@@ -383,5 +435,49 @@ document.querySelectorAll('.project-card, .skill-item').forEach(c => {
   obs.observe(c);
 });
 </script>
+
+<!-- Fluid Cursor -->
+<div class="fluid-cursor"></div>
+<style>
+.fluid-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.8), rgba(255, 0, 128, 0.8));
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: blur(15px);
+  z-index: 9999;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+</style>
+<script>
+  const fluidCursor = document.querySelector('.fluid-cursor');
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let cursorX = mouseX;
+  let cursorY = mouseY;
+  
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  function animateCursor() {
+    let dx = mouseX - cursorX;
+    let dy = mouseY - cursorY;
+    cursorX += dx * 0.12;
+    cursorY += dy * 0.12;
+    
+    fluidCursor.style.transform = `translate3d(${cursorX - 30}px, ${cursorY - 30}px, 0)`;
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+</script>
 </body>
+
 </html>
